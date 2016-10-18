@@ -1,0 +1,39 @@
+<%= flash[:notice] %>
+<table>
+  <thead>
+    <th>Catalog#</th>
+    <th>Artist</th>
+    <th>Title</th>
+    <th>Label</th>
+    <th>Format</th>
+    <th>Rating</th>
+    <th>Released</th>
+    <th>Release_id</th>
+    <th>Notes</th>
+    <th>Registered date</th>
+  </thead>
+  <tbody>
+    <% @catalogs.each do || %>
+      <tr>
+        <td><%= catalog.Catalog %></td>
+        <td><%= catalog.Artist %></td>
+        <td><%= catalog.Title %></td>
+        <td><%= catalog.Label %></td>
+        <td><%= catalog.Format %></td>
+        <td><%= catalog.Rating %></td>
+        <td><%= catalog.Released %></td>
+        <td><%= catalog.Release_id %></td>
+        <td><%= catalog.Notes %></td>
+        <td><%= catalog.Registered %></td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
+
+<div>
+  <h4>Import du CSV ici</h4>
+    <%= form_tag import_catalogs_path, multipart: true do %>
+      <%= file_field_tag :file %>
+      <%= submit_tag "Import du CSV" %>
+    <% end %>
+</div>
