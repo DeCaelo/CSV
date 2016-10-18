@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161018132644) do
+ActiveRecord::Schema.define(version: 20161018135512) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "catalogs", force: :cascade do |t|
+    t.string   "Catalog"
+    t.string   "Artist"
+    t.string   "Title"
+    t.string   "Label"
+    t.integer  "Format"
+    t.integer  "Rating"
+    t.date     "Released"
+    t.integer  "Release_id"
+    t.string   "Notes"
+    t.datetime "Registered"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
